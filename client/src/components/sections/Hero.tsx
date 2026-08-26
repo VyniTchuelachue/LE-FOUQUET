@@ -1,0 +1,82 @@
+import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+import { MapPin, ChevronDown } from "lucide-react";
+import { restaurant } from "@/data/restaurant";
+
+const Hero = () => {
+  return (
+    <section
+      id="accueil"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink"
+    >
+      <div className="absolute inset-0">
+        <img
+          src="/images/interior.jpg"
+          alt="Ambiance du restaurant Le Fouquet à Douala"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-wine-dark/60" />
+        <div className="absolute inset-0 bg-ink/30" />
+      </div>
+
+      <div className="container relative z-10 pt-28 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mx-auto flex max-w-3xl flex-col items-center text-center"
+        >
+          <span className="section-eyebrow !text-gold">
+            <span className="h-px w-8 bg-gold" />
+            Restaurant — Akwa, Douala
+            <span className="h-px w-8 bg-gold" />
+          </span>
+
+          <h1 className="mt-6 font-script text-6xl leading-none text-gold drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)] sm:text-7xl md:text-8xl">
+            Le Fouquet
+          </h1>
+
+          <p className="mt-6 max-w-xl font-serif text-xl italic text-cream/90 sm:text-2xl">
+            Une table incontournable de Douala, où la gastronomie camerounaise
+            rencontre l'élégance.
+          </p>
+
+          <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream/70 sm:text-base">
+            Ndolé signature, grillades généreuses et cocktails maison, servis
+            chaque jour jusqu'à 1h30 du matin dans un cadre chaleureux au cœur
+            d'Akwa.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link to="/menu#reservation" className="btn-gold">
+              Réserver une table
+            </Link>
+            <Link to="/menu" className="btn-outline">
+              Découvrir le menu
+            </Link>
+          </div>
+
+          <a
+            href={restaurant.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-cream/60 transition-colors hover:text-gold"
+          >
+            <MapPin size={14} className="text-gold" />
+            {restaurant.address}
+          </a>
+        </motion.div>
+      </div>
+
+      <a
+        href="#a-propos"
+        aria-label="Défiler vers le bas"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-gold/80"
+      >
+        <ChevronDown size={28} />
+      </a>
+    </section>
+  );
+};
+
+export default Hero;

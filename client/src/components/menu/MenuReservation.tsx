@@ -1,0 +1,229 @@
+import { useState, type FormEvent } from "react";
+import { motion } from "motion/react";
+import { CalendarDays, Users, Clock, Send, CheckCircle2 } from "lucide-react";
+import { formatXAF } from "@/data/menu";
+import type { CartLine } from "./CartBar";
+
+type Status = "idle" | "loading" | "success" | "error";
+
+const MenuReservation = ({ lines, total }: { lines: CartLine[]; total: number }) => {
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+    setError("");
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+    const preOrder = lines.map(({ item, qty }) => ({
+      name: item.name,
+      qty,
+      price: item.price,
+    }));
+
+    try {
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, preOrder, preOrderTotal: total }),
+      });
+      if (!res.ok) throw new Error("Échec de l'envoi");
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setError("Une erreur est survenue. Merci de réessayer ou de nous appeler directement.");
+    }
+  }
+
+  return (
+    <section id="reservation" className="scroll-mt-40 bg-wine-gradient py-24 sm:py-28">
+      <div className="container">
+        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+          >
+            <span className="section-eyebrow !text-gold">
+              <span className="h-px w-8 bg-gold" />
+              Réservation
+            </span>
+            <h2 className="mt-5 font-serif text-3xl font-bold text-cream sm:text-4xl md:text-5xl">
+              Réservez votre table
+            </h2>
+            <p className="mt-6 text-cream/75 leading-relaxed">
+              Ajoutez des plats à votre sélection ci-dessus pour les inclure à
+              votre réservation, ou réservez simplement une table — notre
+              équipe confirmera par téléphone ou WhatsApp.
+            </p>
+
+            <ul className="mt-8 space-y-4 text-sm text-cream/80">
+              <li className="flex items-center gap-3">
+                <Clock size={18} className="text-gold" /> Ouvert tous les jours, 12:00 – 01:30
+              </li>
+              <li className="flex items-center gap-3">
+                <Users size={18} className="text-gold" /> Groupes, événements et privatisation sur demande
+              </li>
+              <li className="flex items-center gap-3">
+                <CalendarDays size={18} className="text-gold" /> Confirmation par téléphone ou WhatsApp
+              </li>
+            </ul>
+
+            {lines.length > 0 && (
+              <div className="mt-8 rounded-2xl border border-gold/25 bg-white/5 p-5">
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
+                  Votre sélection
+                </h3>
+                <div className="mt-3 space-y-1.5">
+                  {lines.map(({ item, qty }) => (
+                    <div key={item.id} className="flex justify-between text-sm text-cream/85">
+                      <span>{qty}× {item.name}</span>
+                      <span className="text-cream/60">{formatXAF((item.price || 0) * qty)}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 flex justify-between border-t border-gold/20 pt-3 text-sm font-bold text-gold">
+                  <span>Total estimé</span>
+                  <span>{formatXAF(total)}</span>
+                </div>
+              </div>
+            )}
+          </motion.div>
+
+          <motion.form
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            onSubmit={handleSubmit}
+            className="rounded-2xl border border-gold/25 bg-cream/95 p-7 shadow-2xl sm:p-9"
+          >
+            {status === "success" ? (
+              <div className="flex flex-col items-center py-10 text-center">
+                <CheckCircle2 size={48} className="text-wine" />
+                <h3 className="mt-4 font-serif text-xl font-semibold text-wine">
+                  Merci pour votre réservation !
+                </h3>
+                <p className="mt-2 text-sm text-ink/60">
+                  Nous vous contacterons très vite pour la confirmer.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus("idle")}
+                  className="mt-6 text-sm font-semibold text-wine underline underline-offset-4"
+                >
+                  Faire une nouvelle réservation
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Nom complet
+                  </label>
+                  <input
+                    required
+                    name="name"
+                    type="text"
+                    placeholder="Votre nom"
+                    className="w-full rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Téléphone
+                  </label>
+                  <input
+                    required
+                    name="phone"
+                    type="tel"
+                    placeholder="+237 6XX XXX XXX"
+                    className="w-full rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Date
+                  </label>
+                  <input
+                    required
+                    name="date"
+                    type="date"
+                    className="w-full rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Heure
+                  </label>
+                  <input
+                    required
+                    name="time"
+                    type="time"
+                    className="w-full rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Nombre de convives
+                  </label>
+                  <input
+                    required
+                    name="guests"
+                    type="number"
+                    min={1}
+                    max={30}
+                    defaultValue={2}
+                    className="w-full rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Email (optionnel)
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="vous@email.com"
+                    className="w-full rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-wine">
+                    Message (optionnel)
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    placeholder="Occasion spéciale, préférences, allergies…"
+                    className="w-full resize-none rounded-lg border border-wine/20 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                  />
+                </div>
+
+                <div className="sm:col-span-2">
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="btn-gold w-full disabled:opacity-60"
+                  >
+                    {status === "loading" ? "Envoi en cours…" : "Confirmer la réservation"}
+                    {status !== "loading" && <Send size={16} />}
+                  </button>
+                  {status === "error" && (
+                    <p className="mt-3 text-center text-sm text-wine">{error}</p>
+                  )}
+                </div>
+              </div>
+            )}
+          </motion.form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MenuReservation;
