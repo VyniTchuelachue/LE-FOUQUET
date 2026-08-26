@@ -1,41 +1,53 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
-import { CalendarDays, Users, Clock, Send, CheckCircle2 } from "lucide-react";
+import { CalendarDays, Users, Clock, MessageCircle, CheckCircle2 } from "lucide-react";
 import { formatXAF } from "@/data/menu";
+import { restaurant } from "@/data/restaurant";
 import type { CartLine } from "./CartBar";
 
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "success";
+
+function buildWhatsAppMessage(
+  data: Record<string, FormDataEntryValue>,
+  lines: CartLine[],
+  total: number
+) {
+  const rows = [
+    "Nouvelle réservation — Le Fouquet",
+    "",
+    `Nom : ${data.name}`,
+    `Téléphone : ${data.phone}`,
+    `Date : ${data.date}`,
+    `Heure : ${data.time}`,
+    `Convives : ${data.guests}`,
+  ];
+  if (data.email) rows.push(`Email : ${data.email}`);
+  if (data.message) rows.push(`Message : ${data.message}`);
+
+  if (lines.length > 0) {
+    rows.push("", "Sélection :");
+    lines.forEach(({ item, qty }) => {
+      rows.push(`- ${qty}× ${item.name} (${formatXAF((item.price || 0) * qty)})`);
+    });
+    rows.push(`Total estimé : ${formatXAF(total)}`);
+  }
+
+  return rows.join("\n");
+}
 
 const MenuReservation = ({ lines, total }: { lines: CartLine[]; total: number }) => {
   const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState("");
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
-    setError("");
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-    const preOrder = lines.map(({ item, qty }) => ({
-      name: item.name,
-      qty,
-      price: item.price,
-    }));
+    const message = buildWhatsAppMessage(data, lines, total);
 
-    try {
-      const res = await fetch("/api/reservation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, preOrder, preOrderTotal: total }),
-      });
-      if (!res.ok) throw new Error("Échec de l'envoi");
-      setStatus("success");
-      form.reset();
-    } catch {
-      setStatus("error");
-      setError("Une erreur est survenue. Merci de réessayer ou de nous appeler directement.");
-    }
+    window.open(`${restaurant.whatsappHref}?text=${encodeURIComponent(message)}`, "_blank");
+    setStatus("success");
+    form.reset();
   }
 
   return (
@@ -106,10 +118,12 @@ const MenuReservation = ({ lines, total }: { lines: CartLine[]; total: number })
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle2 size={48} className="text-wine" />
                 <h3 className="mt-4 font-serif text-xl font-semibold text-wine">
-                  Merci pour votre réservation !
+                  Votre demande est prête !
                 </h3>
                 <p className="mt-2 text-sm text-ink/60">
-                  Nous vous contacterons très vite pour la confirmer.
+                  Nous avons ouvert WhatsApp avec les détails de votre
+                  réservation — il ne vous reste qu'à appuyer sur envoyer
+                  pour la transmettre au Fouquet.
                 </p>
                 <button
                   type="button"
@@ -205,17 +219,13 @@ const MenuReservation = ({ lines, total }: { lines: CartLine[]; total: number })
                 </div>
 
                 <div className="sm:col-span-2">
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="btn-gold w-full disabled:opacity-60"
-                  >
-                    {status === "loading" ? "Envoi en cours…" : "Confirmer la réservation"}
-                    {status !== "loading" && <Send size={16} />}
+                  <button type="submit" className="btn-gold w-full">
+                    Envoyer sur WhatsApp <MessageCircle size={16} />
                   </button>
-                  {status === "error" && (
-                    <p className="mt-3 text-center text-sm text-wine">{error}</p>
-                  )}
+                  <p className="mt-3 text-center text-xs text-ink/50">
+                    Ouvre WhatsApp avec votre demande pré-remplie — confirmez
+                    l'envoi pour la transmettre au restaurant.
+                  </p>
                 </div>
               </div>
             )}
