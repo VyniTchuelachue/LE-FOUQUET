@@ -82,4 +82,4 @@ export const reviews: Review[] = [
 ];
 
 export const googleRating = 3.7;
-export const totalReviewsApprox = "150+";
+export const totalGoogleReviews = 1135;

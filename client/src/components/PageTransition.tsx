@@ -6,8 +6,11 @@ const prefersReducedMotion =
   typeof window !== "undefined" &&
   window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-const HOLD_MS = prefersReducedMotion ? 250 : 1700;
-const FILL_DURATION = prefersReducedMotion ? 0 : 0.9;
+const HOLD_MS = prefersReducedMotion ? 250 : 1900;
+const FILL_DELAY = 0.25;
+const FILL_DURATION = prefersReducedMotion ? 0 : 0.7;
+const SHIMMER_DELAY = FILL_DELAY + FILL_DURATION - 0.05;
+const SHIMMER_DURATION = prefersReducedMotion ? 0 : 0.7;
 
 const PageTransition = () => {
   const { pathname } = useLocation();
@@ -26,64 +29,56 @@ const PageTransition = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.04 }}
           transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-wine-gradient"
+          className="fixed inset-0 z-[200] flex items-center justify-center"
+          style={{ background: "linear-gradient(135deg, #93302F 0%, #7A1F1F 100%)" }}
           aria-hidden="true"
         >
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 25% 25%, #D4AF37 0, transparent 45%), radial-gradient(circle at 75% 75%, #D4AF37 0, transparent 45%)",
-            }}
-          />
-
           <div className="relative flex flex-col items-center px-6 text-center">
             <motion.span
-              initial={{ opacity: 0, y: -8 }}
+              initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-[0.65rem] font-semibold uppercase tracking-[0.5em] text-gold/80 sm:text-xs"
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="text-[0.6rem] font-semibold uppercase tracking-[0.45em] text-gold/80"
             >
               Depuis Douala
             </motion.span>
 
-            <motion.span
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.3, ease: [0.65, 0, 0.35, 1] }}
-              className="mt-4 h-px w-16 origin-center bg-gold-gradient sm:w-24"
-            />
-
-            <div className="relative mt-6 select-none">
-              <span className="font-script text-7xl leading-none text-white/25 sm:text-8xl md:text-9xl">
+            <div className="relative mt-3 select-none">
+              <span className="font-script text-5xl leading-none text-white/25 sm:text-6xl md:text-7xl">
                 Le Fouquet
               </span>
+
+              {/* Gold fill, left to right */}
               <motion.span
-                initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
+                initial={{ clipPath: "inset(0% 100% 0% 0%)" }}
                 animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-                transition={{ duration: FILL_DURATION, delay: 0.5, ease: [0.45, 0, 0.2, 1] }}
-                className="absolute inset-0 font-script text-7xl leading-none text-gold drop-shadow-[0_2px_20px_rgba(212,175,55,0.5)] sm:text-8xl md:text-9xl"
+                transition={{ duration: FILL_DURATION, delay: FILL_DELAY, ease: [0.45, 0, 0.2, 1] }}
+                className="absolute inset-0 font-script text-5xl leading-none text-gold drop-shadow-[0_2px_16px_rgba(212,175,55,0.5)] sm:text-6xl md:text-7xl"
+              >
+                Le Fouquet
+              </motion.span>
+
+              {/* Shine sweep, right to left */}
+              <motion.span
+                initial={{ backgroundPosition: "200% 0%" }}
+                animate={{ backgroundPosition: "-100% 0%" }}
+                transition={{ duration: SHIMMER_DURATION, delay: SHIMMER_DELAY, ease: "easeInOut" }}
+                className="absolute inset-0 bg-clip-text font-script text-5xl leading-none text-transparent sm:text-6xl md:text-7xl"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(100deg, transparent 42%, rgba(255,255,255,0.9) 50%, transparent 58%)",
+                  backgroundSize: "300% 100%",
+                }}
               >
                 Le Fouquet
               </motion.span>
             </div>
 
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.85, ease: [0.65, 0, 0.35, 1] }}
-              className="mt-6 flex w-40 origin-center items-center gap-3 sm:w-56"
-            >
-              <span className="h-px flex-1 bg-gold-gradient" />
-              <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
-              <span className="h-px flex-1 bg-gold-gradient" />
-            </motion.div>
-
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.05 }}
-              className="mt-4 text-xs font-semibold uppercase tracking-[0.5em] text-cream/70"
+              transition={{ duration: 0.4, delay: 0.35 }}
+              className="mt-3 text-[0.6rem] font-semibold uppercase tracking-[0.45em] text-cream/70"
             >
               Restaurant
             </motion.span>

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
-import { reviews, googleRating } from "@/data/reviews";
+import { reviews, googleRating, totalGoogleReviews } from "@/data/reviews";
 
 const firstColumn = reviews.slice(0, 4);
 const secondColumn = reviews.slice(4, 8);
@@ -35,22 +35,26 @@ const Testimonials = () => {
             Ce que disent nos convives
           </h2>
 
-          <div className="mt-5 flex items-center gap-3 rounded-full border border-gold/40 bg-white/70 px-5 py-2.5 shadow-sm">
-            <div className="flex gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={16}
-                  className={
-                    i < Math.round(googleRating)
-                      ? "fill-gold text-gold"
-                      : "fill-transparent text-gold/30"
-                  }
-                />
-              ))}
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-gold/40 bg-white/70 px-5 py-2.5 shadow-sm">
+            <div className="flex items-center gap-2">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    size={16}
+                    className={
+                      i < Math.round(googleRating)
+                        ? "fill-gold text-gold"
+                        : "fill-transparent text-gold/30"
+                    }
+                  />
+                ))}
+              </div>
+              <span className="text-sm font-semibold text-wine">{googleRating.toFixed(1)}/5</span>
             </div>
-            <span className="text-sm font-semibold text-wine">{googleRating.toFixed(1)}/5</span>
-            <span className="text-sm text-ink/50">sur Google</span>
+            <span className="text-xs text-ink/50 sm:text-sm">
+              plus de {totalGoogleReviews.toLocaleString("fr-FR")} avis Google
+            </span>
           </div>
 
           <p className="mt-5 text-ink/60">
