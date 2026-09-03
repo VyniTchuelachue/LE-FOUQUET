@@ -59,7 +59,7 @@ export const menu: MenuCategory[] = [
       {
         items: [
           { id: "fruits-saison", name: "Fruits de saison", nameEn: "Season fruits", price: 1500 },
-          { id: "salade-fruits", name: "Salade de fruits", nameEn: "Fruits salad", price: 1500 },
+          { id: "salade-fruits", name: "Salade de fruits", nameEn: "Fruits salad", price: 1500, image: "/images/salade-de-fruits.jpg", featured: true },
         ],
       },
     ],
@@ -84,11 +84,11 @@ export const menu: MenuCategory[] = [
       {
         label: "Pâtes & Riz",
         items: [
-          { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500 },
+          { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500, image: "/images/spaghetti-bolognaise.jpg", featured: true },
           { id: "spaghetti-carbonara", name: "Spaghetti carbonara", nameEn: "Carbonara spaghetti", price: 6500 },
           { id: "riz-saute-poisson-fume", name: "Riz sauté poisson fumé", nameEn: "Fried rice with smoked fish", price: 5000 },
           { id: "riz-saute-viande", name: "Riz sauté viande", nameEn: "Fried rice with beef", price: 5000 },
-          { id: "riz-saute-villageois", name: "Riz sauté villageois", nameEn: "Village-style fried rice", price: 5000, image: "/images/riz-saute.jpg", featured: true },
+          { id: "riz-saute-villageois", name: "Riz sauté villageois", nameEn: "Village-style fried rice", price: 5000, image: "/images/riz-saute-poulet.jpg", featured: true },
         ],
       },
       {
@@ -99,7 +99,7 @@ export const menu: MenuCategory[] = [
           { id: "porc-poele", name: "Porc poêlé", nameEn: "Fried pork", price: 3500 },
           { id: "porc-grille", name: "Porc grillé", nameEn: "Grilled pork", price: 3500 },
           { id: "porc-saute-ail", name: "Porc sauté à l'ail", nameEn: "Garlic sautéed pork", price: 3500 },
-          { id: "roti-porc", name: "Rôti de porc", nameEn: "Roast pork", price: 3500, image: "/images/frites-porc-roti.jpg", featured: true },
+          { id: "roti-porc", name: "Rôti de porc", nameEn: "Roast pork", price: 3500, image: "/images/porc-roti-plantain.jpg", featured: true },
           { id: "porc-fume", name: "Porc fumé", nameEn: "Smoked pork", price: 4000 },
           { id: "porc-creme-champignons", name: "Porc crème champignons", nameEn: "Pork, cream & mushrooms", price: 5000 },
           { id: "cote-porc-dijonnaise", name: "Côte de porc à la dijonnaise", nameEn: "Dijon pork chop", price: 5000 },
@@ -180,8 +180,8 @@ export const menu: MenuCategory[] = [
           { id: "ndole-viande-fumee", name: "Ndolè viande fumée", price: 3500, image: "/images/riz-ndole-miondo.jpg", featured: true },
           { id: "ndole-poisson-fume", name: "Ndolè poisson fumé", price: 3500 },
           { id: "ndole-poulet", name: "Ndolè poulet", price: 3500 },
-          { id: "ndole-porc", name: "Ndolè porc", price: 3500, image: "/images/ndole-porc-plantains.jpg", featured: true },
-          { id: "ndole-porc-fume", name: "Ndolè porc fumé", price: 4500 },
+          { id: "ndole-porc", name: "Ndolè porc", price: 3500, image: "/images/riz-ndole-plantain.jpg", featured: true },
+          { id: "ndole-porc-fume", name: "Ndolè porc fumé", price: 4500, image: "/images/ndole-porc-fume.jpg", featured: true },
           { id: "ndole-morue", name: "Ndolè morue", price: 5500 },
           { id: "ndole-crevettes", name: "Ndolè crevettes", price: 5500 },
           { id: "ndole-bar", name: "Ndolè bar", price: 6500 },

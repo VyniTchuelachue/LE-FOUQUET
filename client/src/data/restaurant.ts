@@ -18,7 +18,7 @@ export const restaurant = {
     { day: "Samedi", time: "12:00 – 01:30" },
     { day: "Dimanche", time: "12:00 – 01:30" },
   ],
-  since: 2016,
+  since: 2009,
 };
 
 export const dishes = [
@@ -37,7 +37,7 @@ export const dishes = [
   {
     name: "Ndolè Porc",
     description: "Ndolè traditionnel mijoté au porc fondant, accompagné de plantain frit en garniture.",
-    image: "/images/ndole-porc-plantains.jpg",
+    image: "/images/riz-ndole-plantain.jpg",
     price: "3 500 XAF",
   },
   {
@@ -49,14 +49,14 @@ export const dishes = [
   {
     name: "Riz Sauté Villageois",
     description: "Riz sauté façon village, parfumé aux épices et légumes croquants.",
-    image: "/images/riz-saute.jpg",
+    image: "/images/riz-saute-poulet.jpg",
     price: "5 000 XAF",
   },
   {
-    name: "Ndolè Viande Fumée",
-    description: "Ndolè traditionnel à la viande fumée, servi avec riz parfumé et miondo.",
-    image: "/images/riz-ndole-miondo.jpg",
-    price: "3 500 XAF",
+    name: "Ndolè Porc Fumé",
+    description: "Ndolè traditionnel au porc fumé, servi avec riz parfumé et plantain.",
+    image: "/images/ndole-porc-fume.jpg",
+    price: "4 500 XAF",
   },
 ];
 
@@ -68,8 +68,9 @@ export const gallery = [
   { src: "/images/beef-sticks.jpg", alt: "Brochettes de bœuf grillées" },
   { src: "/images/bol-piment.jpg", alt: "Bol de piment maison" },
   { src: "/images/salade.jpg", alt: "Salade fraîche du chef" },
-  { src: "/images/frites-porc-roti.jpg", alt: "Frites et porc rôti" },
+  { src: "/images/porc-roti-plantain.jpg", alt: "Rôti de porc et plantains" },
   { src: "/images/frites-sauce-crevette.png", alt: "Frites sauce crevette" },
+  { src: "/images/bar-a-vin.jpg", alt: "Le bar à vins du Fouquet" },
 ];
 
 export const cocktails = [
