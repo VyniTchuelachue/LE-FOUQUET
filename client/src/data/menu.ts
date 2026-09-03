@@ -33,7 +33,7 @@ export const menu: MenuCategory[] = [
         items: [
           { id: "omelette-simple", name: "Omelette simple", nameEn: "Plain omelette", price: 3000, image: "/images/omelette-simple.jpg", featured: true },
           { id: "omelette-garnie", name: "Omelette garnie", nameEn: "Garnished omelette", price: 3500, image: "/images/omelette-garnie.jpg", featured: true },
-          { id: "salade-fouquet", name: "Salade du Fouquet", nameEn: "Fouquet salad", description: "Maïs doux, carotte, laitue, thon, œuf dur", price: 3000, image: "/images/salade.jpg", featured: true },
+          { id: "salade-fouquet", name: "Salade du Fouquet", nameEn: "Fouquet salad", description: "Maïs doux, carotte, laitue, thon, œuf dur", price: 3000, image: "/images/salade-fouquet.jpg", featured: true },
           { id: "salade-mixte", name: "Salade mixte", nameEn: "Mixed salad", description: "Avocat, tomate, laitue, oignon, œuf dur", price: 3000 },
           { id: "avocat-vinaigrette", name: "Avocat vinaigrette", nameEn: "Avocado vinaigrette", description: "Avocat, tomate, laitue", price: 3000 },
           { id: "salade-chef", name: "Salade du chef", nameEn: "Chef salad", description: "Avocat, tomate, oignon, thon, œuf dur, laitue", price: 4000 },
@@ -58,7 +58,7 @@ export const menu: MenuCategory[] = [
     groups: [
       {
         items: [
-          { id: "fruits-saison", name: "Fruits de saison", nameEn: "Season fruits", price: 1500 },
+          { id: "fruits-saison", name: "Fruits de saison", nameEn: "Season fruits", price: 1500, image: "/images/fruits-saison.jpg", featured: true },
           { id: "salade-fruits", name: "Salade de fruits", nameEn: "Fruits salad", price: 1500, image: "/images/salade-de-fruits.jpg", featured: true },
         ],
       },
@@ -84,8 +84,8 @@ export const menu: MenuCategory[] = [
       {
         label: "Pâtes & Riz",
         items: [
-          { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500, image: "/images/spaghetti-bolognaise.jpg", featured: true },
-          { id: "spaghetti-carbonara", name: "Spaghetti carbonara", nameEn: "Carbonara spaghetti", price: 6500 },
+          { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500 },
+          { id: "spaghetti-carbonara", name: "Spaghetti carbonara", nameEn: "Carbonara spaghetti", price: 6500, image: "/images/spaghetti-carbonara.jpg", featured: true },
           { id: "riz-saute-poisson-fume", name: "Riz sauté poisson fumé", nameEn: "Fried rice with smoked fish", price: 5000 },
           { id: "riz-saute-viande", name: "Riz sauté viande", nameEn: "Fried rice with beef", price: 5000 },
           { id: "riz-saute-villageois", name: "Riz sauté villageois", nameEn: "Village-style fried rice", price: 5000, image: "/images/riz-saute-poulet.jpg", featured: true },
@@ -118,10 +118,10 @@ export const menu: MenuCategory[] = [
         items: [
           { id: "brochettes-boeuf", name: "Brochettes de bœuf", nameEn: "Beef skewers", price: 4000, image: "/images/beef-sticks.jpg", featured: true },
           { id: "emince-boeuf", name: "Émincé de bœuf", nameEn: "Minced beef", price: 4500 },
-          { id: "steak-grille", name: "Steak grillé", nameEn: "Grilled steak", price: 4500 },
+          { id: "steak-grille", name: "Steak grillé", nameEn: "Grilled steak", price: 4500, image: "/images/steak-grille.jpg", featured: true },
           { id: "viande-creme", name: "Viande crème", nameEn: "Cream sauce with meat", price: 4500 },
           { id: "viande-basquaise", name: "Viande basquaise", nameEn: "Basquaise beef", price: 4500 },
-          { id: "steak-poivre-penja", name: "Steak au poivre de Penja", nameEn: "Steak with Penja white pepper", price: 6000 },
+          { id: "steak-poivre-penja", name: "Steak au poivre de Penja", nameEn: "Steak with Penja white pepper", price: 6000, image: "/images/steak-poivre-penja.jpg", featured: true },
           { id: "steak-champignons", name: "Steak aux champignons", nameEn: "Mushroom steak with cream", price: 6500, image: "/images/steak-champignon.jpg", featured: true },
         ],
       },
@@ -202,7 +202,7 @@ export const menu: MenuCategory[] = [
           { id: "jardiniere-legumes", name: "Jardinière de légumes", nameEn: "Mixed vegetables", price: 2000, image: "/images/la-jardiniere.jpg", featured: true },
           { id: "riz-cantonais", name: "Riz cantonais", nameEn: "Fried rice", price: 2000 },
           { id: "riz-parfume", name: "Riz parfumé", nameEn: "Aromatic rice", price: 2000 },
-          { id: "riz-blanc", name: "Riz blanc", nameEn: "White rice", price: 2000 },
+          { id: "riz-blanc", name: "Riz blanc", nameEn: "White rice", price: 2000, image: "/images/riz-blanc.jpg", featured: true },
           { id: "riz-curry", name: "Riz curry", nameEn: "Curry rice", price: 2000 },
           { id: "miondo", name: "Miondo", nameEn: "Cassava sticks", price: 2000 },
           { id: "plantain-tape", name: "Plantain tapé", nameEn: "Smashed plantains", price: 2000 },

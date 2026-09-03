@@ -64,7 +64,7 @@ export const gallery = [
   { src: "/images/interior.jpg", alt: "Salle du restaurant Le Fouquet" },
   { src: "/images/interior-people-1.jpg", alt: "Convives attablés chez Le Fouquet" },
   { src: "/images/interior-people-2.jpg", alt: "Ambiance chaleureuse du restaurant" },
-  { src: "/images/la-jardiniere.jpg", alt: "Plat La Jardinière" },
+  { src: "/images/steak-poivre-penja.jpg", alt: "Steak au poivre de Penja" },
   { src: "/images/beef-sticks.jpg", alt: "Brochettes de bœuf grillées" },
   { src: "/images/bol-piment.jpg", alt: "Bol de piment maison" },
   { src: "/images/salade.jpg", alt: "Salade fraîche du chef" },

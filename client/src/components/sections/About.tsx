@@ -43,8 +43,8 @@ const About = () => {
               className="col-span-2 h-64 w-full rounded-2xl object-cover shadow-xl"
             />
             <img
-              src="/images/la-jardiniere.jpg"
-              alt="Plat signature Le Fouquet"
+              src="/images/bar-a-vin.jpg"
+              alt="Le bar à vins du Fouquet"
               className="h-48 w-full rounded-2xl object-cover shadow-xl"
             />
             <img
