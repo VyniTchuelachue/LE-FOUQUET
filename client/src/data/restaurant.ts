@@ -25,7 +25,7 @@ export const dishes = [
   {
     name: "Ndolè Royal",
     description: "La spécialité camerounaise par excellence — crevettes, gambas, viande fumée & morue, pour la table entière.",
-    image: "/images/couscous-ndole.jpg",
+    image: "/images/ndole-royal.jpg",
     price: "15 000 XAF",
   },
   {
@@ -71,10 +71,11 @@ export const gallery = [
   { src: "/images/porc-roti-plantain.jpg", alt: "Rôti de porc et plantains" },
   { src: "/images/frites-sauce-crevette.png", alt: "Frites sauce crevette" },
   { src: "/images/bar-a-vin.jpg", alt: "Le bar à vins du Fouquet" },
+  { src: "/images/cocktails-ambiance.jpg", alt: "Cocktails signature du Fouquet" },
 ];
 
 export const cocktails = [
-  { src: "/images/cocktail-1.jpg", name: "Piña Colada" },
-  { src: "/images/cocktail-2.jpg", name: "Mojito" },
-  { src: "/images/cocktail-3.jpg", name: "Cuba Libre" },
+  { src: "/images/pina-colada.jpg", name: "Piña Colada" },
+  { src: "/images/mojito.jpg", name: "Mojito" },
+  { src: "/images/cuba-libre.jpg", name: "Cuba Libre" },
 ];

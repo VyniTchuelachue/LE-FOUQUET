@@ -10,3 +10,5 @@ server/data/reservations.json
 /*.jpg
 /*.png
 /*.pdf
+/*.webp
+/Cocktails/
