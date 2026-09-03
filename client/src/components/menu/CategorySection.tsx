@@ -41,6 +41,10 @@ const CategorySection = forwardRef<
           </div>
         ))}
       </div>
+
+      {category.note && (
+        <p className="mt-8 text-center text-xs italic text-ink/40">{category.note}</p>
+      )}
     </div>
   );
 });

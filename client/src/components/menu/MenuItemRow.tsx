@@ -38,8 +38,12 @@ const MenuItemRow = ({
       </div>
 
       <div className="shrink-0 text-right text-sm font-bold text-wine">
-        {available ? formatXAF(item.price as number) : (
-          <span className="text-xs font-medium italic text-ink/40">{item.priceLabel}</span>
+        {item.priceLabel ? (
+          <span className={available ? "" : "text-xs font-medium italic text-ink/40"}>
+            {item.priceLabel}
+          </span>
+        ) : (
+          formatXAF(item.price as number)
         )}
       </div>
 

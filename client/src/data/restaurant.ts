@@ -23,8 +23,8 @@ export const restaurant = {
 
 export const dishes = [
   {
-    name: "Ndolé Royal",
-    description: "La spécialité camerounaise par excellence, mijotée aux arachides et légumes amers.",
+    name: "Ndolè Royal",
+    description: "La spécialité camerounaise par excellence — crevettes, gambas, viande fumée & morue, pour la table entière.",
     image: "/images/couscous-ndole.jpg",
     price: "15 000 XAF",
   },
@@ -32,31 +32,31 @@ export const dishes = [
     name: "Poulet DG",
     description: "Poulet doré sauté aux légumes frais et plantains mûrs, façon Directeur Général.",
     image: "/images/poulet-dg.jpg",
-    price: "7 500 XAF",
+    price: "10 000 XAF",
   },
   {
-    name: "Ndolé Plantain",
-    description: "Porc fondant, ndolé maison et plantains frits dorés à point.",
+    name: "Ndolè Porc",
+    description: "Ndolè traditionnel mijoté au porc fondant, accompagné de plantain frit en garniture.",
     image: "/images/ndole-porc-plantains.jpg",
-    price: "7 000 XAF",
+    price: "3 500 XAF",
   },
   {
-    name: "Steak, Champignons & Sauce Blanche",
-    description: "Steak grillé nappé d'une onctueuse sauce blanche aux champignons.",
+    name: "Steak aux Champignons",
+    description: "Steak grillé nappé d'une onctueuse crème aux champignons.",
     image: "/images/steak-champignon.jpg",
-    price: "8 000 XAF",
+    price: "6 500 XAF",
   },
   {
-    name: "Riz Sauté du Chef",
-    description: "Riz sauté aux épices et légumes croquants, accompagnement signature de la maison.",
+    name: "Riz Sauté Villageois",
+    description: "Riz sauté façon village, parfumé aux épices et légumes croquants.",
     image: "/images/riz-saute.jpg",
-    price: "4 500 XAF",
+    price: "5 000 XAF",
   },
   {
-    name: "Riz, Ndolé & Miondo",
-    description: "Trio traditionnel généreux — riz parfumé, ndolé et miondo enveloppé de feuille.",
+    name: "Ndolè Viande Fumée",
+    description: "Ndolè traditionnel à la viande fumée, servi avec riz parfumé et miondo.",
     image: "/images/riz-ndole-miondo.jpg",
-    price: "6 000 XAF",
+    price: "3 500 XAF",
   },
 ];
 
@@ -73,7 +73,7 @@ export const gallery = [
 ];
 
 export const cocktails = [
-  { src: "/images/cocktail-1.jpg", name: "Signature Fouquet" },
-  { src: "/images/cocktail-2.jpg", name: "Douala Sunset" },
-  { src: "/images/cocktail-3.jpg", name: "Akwa Spritz" },
+  { src: "/images/cocktail-1.jpg", name: "Piña Colada" },
+  { src: "/images/cocktail-2.jpg", name: "Mojito" },
+  { src: "/images/cocktail-3.jpg", name: "Cuba Libre" },
 ];
