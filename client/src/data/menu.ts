@@ -34,19 +34,19 @@ export const menu: MenuCategory[] = [
           { id: "omelette-simple", name: "Omelette simple", nameEn: "Plain omelette", price: 3000, image: "/images/omelette-simple.jpg", featured: true },
           { id: "omelette-garnie", name: "Omelette garnie", nameEn: "Garnished omelette", price: 3500, image: "/images/omelette-garnie.jpg", featured: true },
           { id: "salade-fouquet", name: "Salade du Fouquet", nameEn: "Fouquet salad", description: "Maïs doux, carotte, laitue, thon, œuf dur", price: 3000, image: "/images/salade-fouquet.jpg", featured: true },
-          { id: "salade-mixte", name: "Salade mixte", nameEn: "Mixed salad", description: "Avocat, tomate, laitue, oignon, œuf dur", price: 3000 },
-          { id: "avocat-vinaigrette", name: "Avocat vinaigrette", nameEn: "Avocado vinaigrette", description: "Avocat, tomate, laitue", price: 3000 },
-          { id: "salade-chef", name: "Salade du chef", nameEn: "Chef salad", description: "Avocat, tomate, oignon, thon, œuf dur, laitue", price: 4000 },
-          { id: "cocktail-crevettes", name: "Cocktail de crevettes", nameEn: "Shrimps cocktail", description: "Crevette, tomate, oignon, œuf dur", price: 5500 },
+          { id: "salade-mixte", name: "Salade mixte", nameEn: "Mixed salad", description: "Avocat, tomate, laitue, oignon, œuf dur", price: 3000, image: "/images/salade-mixte.jpg", featured: true },
+          { id: "avocat-vinaigrette", name: "Avocat vinaigrette", nameEn: "Avocado vinaigrette", description: "Avocat, tomate, laitue", price: 3000, image: "/images/avocat-vinaigrette.jpg", featured: true },
+          { id: "salade-chef", name: "Salade du chef", nameEn: "Chef salad", description: "Avocat, tomate, oignon, thon, œuf dur, laitue", price: 4000, image: "/images/salade-chef.jpg", featured: true },
+          { id: "cocktail-crevettes", name: "Cocktail de crevettes", nameEn: "Shrimps cocktail", description: "Crevette, tomate, oignon, œuf dur", price: 5500, image: "/images/cocktail-de-crevette.jpg", featured: true },
           { id: "avocat-crevettes", name: "Avocat crevettes", nameEn: "Shrimps avocado", description: "Avocat, crevettes, tomate, oignon, œuf dur", price: 5500, image: "/images/avocat-crevette.jpg", featured: true },
         ],
       },
       {
         label: "Entrées Chaudes",
         items: [
-          { id: "sauce-poisson", name: "Sauce de poisson", nameEn: "Fish soup", price: 5500 },
-          { id: "crevettes-ail", name: "Crevettes à l'ail", nameEn: "Garlic shrimps", price: 6000 },
-          { id: "crevettes-pastis", name: "Crevettes sautées au pastis", nameEn: "Flambeed shrimps with pastis", price: 6000 },
+          { id: "sauce-poisson", name: "Sauce de poisson", nameEn: "Fish soup", price: 5500, image: "/images/sauce-de-poisson.jpg", featured: true },
+          { id: "crevettes-ail", name: "Crevettes à l'ail", nameEn: "Garlic shrimps", price: 6000, image: "/images/crevette-ail.jpg", featured: true },
+          { id: "crevettes-pastis", name: "Crevettes sautées au pastis", nameEn: "Flambeed shrimps with pastis", price: 6000, image: "/images/crevettes-pastis.jpg", featured: true },
         ],
       },
     ],
@@ -74,7 +74,7 @@ export const menu: MenuCategory[] = [
         label: "Plats à Base de Poulet",
         items: [
           { id: "poulet-dg", name: "Poulet DG", nameEn: "Chicken DG", price: 10000, image: "/images/poulet-dg.jpg", featured: true },
-          { id: "poulet-braise", name: "Poulet braisé", nameEn: "Grilled chicken", price: 9000 },
+          { id: "poulet-braise", name: "Poulet braisé", nameEn: "Grilled chicken", price: 9000, image: "/images/poulet-braise.jpg", featured: true },
           { id: "poulet-poele", name: "Poulet poêlé", nameEn: "Fried chicken", price: 5000, priceLabel: "5 000 / 10 000" },
           { id: "poulet-sauce-forestiere", name: "Poulet sauce forestière", nameEn: "Chicken in mushroom sauce", price: 5000 },
           { id: "poulet-sauce-creme", name: "Poulet sauce crème", nameEn: "Chicken in cream sauce", price: 4500 },
@@ -86,8 +86,8 @@ export const menu: MenuCategory[] = [
         items: [
           { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500 },
           { id: "spaghetti-carbonara", name: "Spaghetti carbonara", nameEn: "Carbonara spaghetti", price: 6500, image: "/images/spaghetti-carbonara.jpg", featured: true },
-          { id: "riz-saute-poisson-fume", name: "Riz sauté poisson fumé", nameEn: "Fried rice with smoked fish", price: 5000 },
-          { id: "riz-saute-viande", name: "Riz sauté viande", nameEn: "Fried rice with beef", price: 5000 },
+          { id: "riz-saute-poisson-fume", name: "Riz sauté poisson fumé", nameEn: "Fried rice with smoked fish", price: 5000, image: "/images/riz-saute-poisson-fume.jpg", featured: true },
+          { id: "riz-saute-viande", name: "Riz sauté viande", nameEn: "Fried rice with beef", price: 5000, image: "/images/riz-saute-viande.jpg", featured: true },
           { id: "riz-saute-villageois", name: "Riz sauté villageois", nameEn: "Village-style fried rice", price: 5000, image: "/images/riz-saute-poulet.jpg", featured: true },
         ],
       },
@@ -102,7 +102,7 @@ export const menu: MenuCategory[] = [
           { id: "roti-porc", name: "Rôti de porc", nameEn: "Roast pork", price: 3500, image: "/images/porc-roti-plantain.jpg", featured: true },
           { id: "porc-fume", name: "Porc fumé", nameEn: "Smoked pork", price: 4000 },
           { id: "porc-creme-champignons", name: "Porc crème champignons", nameEn: "Pork, cream & mushrooms", price: 5000 },
-          { id: "cote-porc-dijonnaise", name: "Côte de porc à la dijonnaise", nameEn: "Dijon pork chop", price: 5000 },
+          { id: "cote-porc-dijonnaise", name: "Côte de porc à la dijonnaise", nameEn: "Dijon pork chop", price: 5000, image: "/images/cote-de-porc.jpg", featured: true },
           { id: "porc-fume-creme", name: "Porc fumé crème", nameEn: "Smoked pork in cream", price: 5500 },
           { id: "porc-fume-creme-champignons", name: "Porc fumé crème champignons", nameEn: "Smoked pork, cream & mushrooms", price: 6000 },
         ],
@@ -116,7 +116,7 @@ export const menu: MenuCategory[] = [
     groups: [
       {
         items: [
-          { id: "brochettes-boeuf", name: "Brochettes de bœuf", nameEn: "Beef skewers", price: 4000, image: "/images/beef-sticks.jpg", featured: true },
+          { id: "brochettes-boeuf", name: "Brochettes de bœuf", nameEn: "Beef skewers", price: 4000, image: "/images/brochette-de-boeuf.jpg", featured: true },
           { id: "emince-boeuf", name: "Émincé de bœuf", nameEn: "Minced beef", price: 4500 },
           { id: "steak-grille", name: "Steak grillé", nameEn: "Grilled steak", price: 4500, image: "/images/steak-grille.jpg", featured: true },
           { id: "viande-creme", name: "Viande crème", nameEn: "Cream sauce with meat", price: 4500 },
@@ -143,7 +143,7 @@ export const menu: MenuCategory[] = [
           { id: "gombo-pistache-viande", name: "Gombo pistache viande", nameEn: "Okro & egusi with beef", price: 4000 },
           { id: "gombo-pistache-porc-fume", name: "Gombo pistache porc fumé", nameEn: "Okro & egusi soup with smoked pork", price: 5000 },
           { id: "gombo-pistache-bar", name: "Gombo pistache bar", nameEn: "Okro & peanut with bar fish", price: 7000 },
-          { id: "gombo-royal", name: "Gombo royal", nameEn: "Royal okro", price: 15000, featured: true },
+          { id: "gombo-royal", name: "Gombo royal", nameEn: "Royal okro", price: 15000, image: "/images/gombo-royal.jpg", featured: true },
         ],
       },
     ],
@@ -155,7 +155,7 @@ export const menu: MenuCategory[] = [
     groups: [
       {
         items: [
-          { id: "bar-poele-barbecue", name: "Bar poêlé sauce barbecue", nameEn: "Fried bar with BBQ sauce", price: 6500 },
+          { id: "bar-poele-barbecue", name: "Bar poêlé sauce barbecue", nameEn: "Fried bar with BBQ sauce", price: 6500, image: "/images/bar-poele.jpg", featured: true },
           { id: "bar-basquaise", name: "Bar basquaise", nameEn: "Basquaise-style bar fish", price: 6500 },
           { id: "bar-creme", name: "Bar crème", nameEn: "Bar in cream", price: 7000 },
           { id: "bar-creme-champignons", name: "Bar crème champignons", nameEn: "Bar with mushroom cream", price: 7500 },
@@ -163,7 +163,7 @@ export const menu: MenuCategory[] = [
           { id: "crevettes-sautees-ail", name: "Crevettes sautées à l'ail", nameEn: "Garlic shrimps", price: 6500 },
           { id: "crevettes-creme", name: "Crevettes crème", nameEn: "Creamy shrimps", price: 7000, image: "/images/frites-sauce-crevette.png", featured: true },
           { id: "gambas-grillees", name: "Gambas grillées", nameEn: "Grilled prawns", price: 8500 },
-          { id: "gambas-ail", name: "Gambas à l'ail", nameEn: "Garlic prawns in cream", price: 10000 },
+          { id: "gambas-ail", name: "Gambas à l'ail", nameEn: "Garlic prawns in cream", price: 10000, image: "/images/gambas-ail.jpg", featured: true },
         ],
       },
     ],

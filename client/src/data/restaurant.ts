@@ -35,10 +35,10 @@ export const dishes = [
     price: "10 000 XAF",
   },
   {
-    name: "Ndolè Porc",
-    description: "Ndolè traditionnel mijoté au porc fondant, accompagné de plantain frit en garniture.",
-    image: "/images/riz-ndole-plantain.jpg",
-    price: "3 500 XAF",
+    name: "Spaghetti Bolognaise",
+    description: "Spaghetti mijoté façon maison, généreusement garni.",
+    image: "/images/spaghetti-bolognaise-home.jpg",
+    price: "6 500 XAF",
   },
   {
     name: "Steak aux Champignons",
