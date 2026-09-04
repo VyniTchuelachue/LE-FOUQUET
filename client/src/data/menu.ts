@@ -73,9 +73,9 @@ export const menu: MenuCategory[] = [
       {
         label: "Plats à Base de Poulet",
         items: [
-          { id: "poulet-dg", name: "Poulet DG", nameEn: "Chicken DG", price: 10000, image: "/images/poulet-dg.jpg", featured: true },
-          { id: "poulet-braise", name: "Poulet braisé", nameEn: "Grilled chicken", price: 9000, image: "/images/poulet-braise.jpg", featured: true },
-          { id: "poulet-poele", name: "Poulet poêlé", nameEn: "Fried chicken", price: 5000, priceLabel: "5 000 / 10 000" },
+          { id: "poulet-dg", name: "Poulet DG", nameEn: "Chicken DG", price: 5500, priceLabel: "5 500 / 10 000", image: "/images/poulet-dg.jpg", featured: true },
+          { id: "poulet-braise", name: "Poulet braisé", nameEn: "Grilled chicken", price: 5000, priceLabel: "5 000 / 9 000", image: "/images/poulet-braise.jpg", featured: true },
+          { id: "poulet-poele", name: "Poulet poêlé", nameEn: "Fried chicken", price: 5500, priceLabel: "5 500 / 10 000" },
           { id: "poulet-sauce-forestiere", name: "Poulet sauce forestière", nameEn: "Chicken in mushroom sauce", price: 5000 },
           { id: "poulet-sauce-creme", name: "Poulet sauce crème", nameEn: "Chicken in cream sauce", price: 4500 },
           { id: "poulet-basquaise", name: "Poulet basquaise", nameEn: "Basquaise chicken", price: 3500 },
@@ -84,21 +84,21 @@ export const menu: MenuCategory[] = [
       {
         label: "Pâtes & Riz",
         items: [
-          { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500 },
+          { id: "spaghetti-bolognaise", name: "Spaghetti bolognaise", nameEn: "Spaghetti bolognese", price: 6500, image: "/images/spaghetti-bolognaise.jpg", featured: true },
           { id: "spaghetti-carbonara", name: "Spaghetti carbonara", nameEn: "Carbonara spaghetti", price: 6500, image: "/images/spaghetti-carbonara.jpg", featured: true },
           { id: "riz-saute-poisson-fume", name: "Riz sauté poisson fumé", nameEn: "Fried rice with smoked fish", price: 5000, image: "/images/riz-saute-poisson-fume.jpg", featured: true },
           { id: "riz-saute-viande", name: "Riz sauté viande", nameEn: "Fried rice with beef", price: 5000, image: "/images/riz-saute-viande.jpg", featured: true },
-          { id: "riz-saute-villageois", name: "Riz sauté villageois", nameEn: "Village-style fried rice", price: 5000, image: "/images/riz-saute-poulet.jpg", featured: true },
+          { id: "riz-saute-poulet", name: "Riz sauté poulet", nameEn: "Fried rice with chicken", price: 5000, image: "/images/riz-saute-poulet.jpg", featured: true },
         ],
       },
       {
         label: "Spécialités au Porc",
         items: [
-          { id: "porc-basquaise", name: "Porc basquaise", nameEn: "Basquaise pork", price: 3000 },
+          { id: "porc-grille", name: "Porc grillé", nameEn: "Grilled pork", price: 3000 },
+          { id: "porc-basquaise", name: "Porc basquaise", nameEn: "Basquaise pork", price: 3500 },
           { id: "porc-creole", name: "Porc créole", nameEn: "Creole pork", price: 3500 },
           { id: "porc-poele", name: "Porc poêlé", nameEn: "Fried pork", price: 3500 },
-          { id: "porc-grille", name: "Porc grillé", nameEn: "Grilled pork", price: 3500 },
-          { id: "porc-saute-ail", name: "Porc sauté à l'ail", nameEn: "Garlic sautéed pork", price: 3500 },
+          { id: "porc-saute-ail", name: "Porc sauté à l'ail", nameEn: "Garlic sautéed pork", price: 4000 },
           { id: "roti-porc", name: "Rôti de porc", nameEn: "Roast pork", price: 3500, image: "/images/porc-roti-plantain.jpg", featured: true },
           { id: "porc-fume", name: "Porc fumé", nameEn: "Smoked pork", price: 4000 },
           { id: "porc-creme-champignons", name: "Porc crème champignons", nameEn: "Pork, cream & mushrooms", price: 5000 },
@@ -120,7 +120,7 @@ export const menu: MenuCategory[] = [
           { id: "emince-boeuf", name: "Émincé de bœuf", nameEn: "Minced beef", price: 4500 },
           { id: "steak-grille", name: "Steak grillé", nameEn: "Grilled steak", price: 4500, image: "/images/steak-grille.jpg", featured: true },
           { id: "viande-creme", name: "Viande crème", nameEn: "Cream sauce with meat", price: 4500 },
-          { id: "viande-basquaise", name: "Viande basquaise", nameEn: "Basquaise beef", price: 4500 },
+          { id: "viande-basquaise", name: "Viande basquaise", nameEn: "Basquaise beef", price: 3000 },
           { id: "steak-poivre-penja", name: "Steak au poivre de Penja", nameEn: "Steak with Penja white pepper", price: 6000, image: "/images/steak-poivre-penja.jpg", featured: true },
           { id: "steak-champignons", name: "Steak aux champignons", nameEn: "Mushroom steak with cream", price: 6500, image: "/images/steak-champignon.jpg", featured: true },
         ],
@@ -138,10 +138,11 @@ export const menu: MenuCategory[] = [
           { id: "gombo-viande-boeuf", name: "Gombo viande de bœuf", nameEn: "Okro soup with beef", price: 3500 },
           { id: "pistache-viande-boeuf", name: "Pistache viande de bœuf", nameEn: "Egusi stew with beef", price: 3500 },
           { id: "legumes-sautes-viande", name: "Légumes sautés viande", nameEn: "Stewed vegetables with beef", price: 3500 },
-          { id: "gombo-morue", name: "Gombo morue", nameEn: "Okro soup with cod", price: 3500 },
           { id: "legumes-pistache-poisson-fume", name: "Légumes pistache poisson fumé", nameEn: "Vegetables & egusi with smoked fish", price: 4000 },
-          { id: "gombo-pistache-viande", name: "Gombo pistache viande", nameEn: "Okro & egusi with beef", price: 4000 },
           { id: "gombo-pistache-porc-fume", name: "Gombo pistache porc fumé", nameEn: "Okro & egusi soup with smoked pork", price: 5000 },
+          { id: "gombo-morue", name: "Gombo morue", nameEn: "Okro soup with cod", price: 6500 },
+          { id: "gombo-pistache-viande", name: "Gombo pistache viande", nameEn: "Okro & egusi with beef", price: 7000 },
+          { id: "legumes-pistache-bar", name: "Légumes pistache bar", nameEn: "Vegetables & egusi with bar fish", price: 7000 },
           { id: "gombo-pistache-bar", name: "Gombo pistache bar", nameEn: "Okro & peanut with bar fish", price: 7000 },
           { id: "gombo-royal", name: "Gombo royal", nameEn: "Royal okro", price: 15000, image: "/images/gombo-royal.jpg", featured: true },
         ],
@@ -184,7 +185,7 @@ export const menu: MenuCategory[] = [
           { id: "ndole-porc-fume", name: "Ndolè porc fumé", price: 4500, image: "/images/ndole-porc-fume.jpg", featured: true },
           { id: "ndole-morue", name: "Ndolè morue", price: 5500 },
           { id: "ndole-crevettes", name: "Ndolè crevettes", price: 5500 },
-          { id: "ndole-bar", name: "Ndolè bar", price: 6500 },
+          { id: "ndole-bar", name: "Ndolè bar", price: 7500 },
           { id: "ndole-gambas", name: "Ndolè gambas", price: 9000 },
           { id: "ndole-royal", name: "Ndolè royal", nameEn: "Royal Ndolè", description: "Pour la table entière", price: 15000, image: "/images/ndole-royal.jpg", featured: true },
         ],
@@ -313,6 +314,16 @@ export const menu: MenuCategory[] = [
         ],
       },
       {
+        label: "Vins Mousseux",
+        items: [
+          { id: "kraemer", name: "Kraemer", price: 30000 },
+          { id: "bois-royale-rouge", name: "Bois Royale rouge", price: 15000 },
+          { id: "bois-royale-blanc", name: "Bois Royale blanc", price: 15000 },
+          { id: "gasquet-rouge", name: "Gasquet rouge", price: 13500 },
+          { id: "gasquet-blanc", name: "Gasquet blanc", price: 13500 },
+        ],
+      },
+      {
         label: "Au Verre",
         items: [
           {
@@ -321,6 +332,13 @@ export const menu: MenuCategory[] = [
             description: "Blanc & rouge moelleux — bouteille 12 000, verre 3 000 / 3 500",
             price: 12000,
             priceLabel: "12 000 (bout.) · 3 000 / 3 500 (verre)",
+          },
+          {
+            id: "bois-royale-verre",
+            name: "Bois Royale",
+            description: "Rouge & blanc — bouteille 15 000, verre 4 000",
+            price: 15000,
+            priceLabel: "15 000 (bout.) · 4 000 (verre)",
           },
         ],
       },
@@ -384,7 +402,7 @@ export const menu: MenuCategory[] = [
         label: "Cognacs",
         items: [
           { id: "remy-martin-verre", name: "Rémy Martin (verre)", price: 6000 },
-          { id: "remy-martin-bouteille", name: "Rémy Martin (bouteille)", price: 25000 },
+          { id: "remy-martin-bouteille", name: "Rémy Martin (bouteille)", price: 70000 },
           { id: "cognac-xo-verre", name: "Cognac XO (verre)", price: 20000 },
           { id: "cognac-xo-bouteille", name: "Cognac XO (bouteille)", price: 250000 },
           { id: "baileys-verre", name: "Baileys (verre)", price: 2000 },
@@ -419,9 +437,9 @@ export const menu: MenuCategory[] = [
     groups: [
       {
         items: [
-          { id: "moet-chandon", name: "Moët & Chandon", price: 50000 },
           { id: "laurent-perrier", name: "Laurent Perrier", price: 50000 },
-          { id: "mumm", name: "Mumm", price: 50000 },
+          { id: "mumm", name: "Mumm", price: 60000 },
+          { id: "moet-chandon", name: "Moët & Chandon", price: 60500 },
           { id: "veuve-clicquot", name: "Veuve Clicquot", price: 80000 },
           { id: "ruinart-brut", name: "Ruinart Brut", price: 80000 },
           { id: "ruinart-blanc", name: "Ruinart Blanc de Blancs", price: 120000 },

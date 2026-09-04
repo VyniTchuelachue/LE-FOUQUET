@@ -37,7 +37,7 @@ export const dishes = [
   {
     name: "Spaghetti Bolognaise",
     description: "Spaghetti mijoté façon maison, généreusement garni.",
-    image: "/images/spaghetti-bolognaise-home.jpg",
+    image: "/images/spaghetti-bolognaise.jpg",
     price: "6 500 XAF",
   },
   {
@@ -47,8 +47,8 @@ export const dishes = [
     price: "6 500 XAF",
   },
   {
-    name: "Riz Sauté Villageois",
-    description: "Riz sauté façon village, parfumé aux épices et légumes croquants.",
+    name: "Riz Sauté Poulet",
+    description: "Riz sauté maison, parfumé aux épices et légumes croquants, servi avec poulet.",
     image: "/images/riz-saute-poulet.jpg",
     price: "5 000 XAF",
   },
