@@ -314,14 +314,17 @@ export const menu: MenuCategory[] = [
         ],
       },
       {
-        label: "Vins Mousseux",
+        label: "Vins de la Maison",
         items: [
-          { id: "kraemer", name: "Kraemer", price: 30000 },
           { id: "bois-royale-rouge", name: "Bois Royale rouge", price: 15000 },
           { id: "bois-royale-blanc", name: "Bois Royale blanc", price: 15000 },
           { id: "gasquet-rouge", name: "Gasquet rouge", price: 13500 },
           { id: "gasquet-blanc", name: "Gasquet blanc", price: 13500 },
         ],
+      },
+      {
+        label: "Vins Mousseux",
+        items: [{ id: "kraemer", name: "Kraemer", price: 30000 }],
       },
       {
         label: "Au Verre",
@@ -451,6 +454,7 @@ export const menu: MenuCategory[] = [
     id: "cocktails",
     title: "Nos Cocktails",
     subtitle: "Tous à 5 000 FCFA",
+    note: "Préparés au shaker, minute.",
     groups: [
       {
         items: [
@@ -460,12 +464,23 @@ export const menu: MenuCategory[] = [
           { id: "colada-fraise", name: "Colada Fraise", description: "Lait coco · crème coco · sucre de canne · sirop fraise", price: 5000, image: "/images/colada-fraise.jpg", featured: true },
           { id: "mojito", name: "Mojito", description: "Rhum blanc · sucre · soda · menthe", price: 5000, image: "/images/mojito.jpg", featured: true },
           { id: "cuba-libre", name: "Cuba Libre", description: "Rhum brun · jus de citron · coca", price: 5000, image: "/images/cuba-libre.jpg", featured: true },
-          { id: "tequila-sunrise", name: "Tequila sunrise", price: 5000, image: "/images/tequila-sunrise.jpg", featured: true },
-          { id: "gin-fizz", name: "Gin fizz", price: 5000, image: "/images/gin-fizz.jpg", featured: true },
-          { id: "americano", name: "Americano", price: 5000, image: "/images/americano.jpg", featured: true },
-          { id: "tequila-paf", name: "Tequila paf", price: 5000, image: "/images/tequila-paf.jpg", featured: true },
-          { id: "diabolo", name: "Diabolo", price: 2500, image: "/images/diabolo.jpg", featured: true },
-          { id: "menthe-lait-cocktail", name: "Menthe lait", price: 2000, image: "/images/menthe-lait.jpg", featured: true },
+        ],
+      },
+    ],
+  },
+  {
+    id: "cocktails-classiques",
+    title: "Cocktails & Rafraîchissements",
+    subtitle: "Classiques & sans alcool",
+    groups: [
+      {
+        items: [
+          { id: "tequila-sunrise", name: "Tequila sunrise", description: "Tequila · jus d'orange · sirop grenadine", price: 5000, image: "/images/tequila-sunrise.jpg", featured: true },
+          { id: "gin-fizz", name: "Gin fizz", description: "Gin · jus de citron · sucre de canne · soda", price: 5000, image: "/images/gin-fizz.jpg", featured: true },
+          { id: "americano", name: "Americano", description: "Gin · Campari · Martini rouge", price: 5000, image: "/images/americano.jpg", featured: true },
+          { id: "tequila-paf", name: "Tequila paf", description: "Tequila · jus de citron vert · sel", price: 5000, image: "/images/tequila-paf.jpg", featured: true },
+          { id: "diabolo", name: "Diabolo", description: "Limonade · sirop de menthe ou grenadine", price: 2500, image: "/images/diabolo.jpg", featured: true },
+          { id: "menthe-lait-cocktail", name: "Menthe lait", description: "Lait frais · sirop de menthe", price: 2000, image: "/images/menthe-lait.jpg", featured: true },
         ],
       },
     ],
