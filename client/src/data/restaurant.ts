@@ -32,7 +32,7 @@ export const dishes = [
     name: "Poulet DG",
     description: "Poulet doré sauté aux légumes frais et plantains mûrs, façon Directeur Général.",
     image: "/images/poulet-dg.jpg",
-    price: "10 000 XAF",
+    price: "5 500 / 10 000 XAF",
   },
   {
     name: "Spaghetti Bolognaise",
