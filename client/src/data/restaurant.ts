@@ -47,10 +47,10 @@ export const dishes = [
     price: "6 500 XAF",
   },
   {
-    name: "Riz Sauté Poulet",
-    description: "Riz sauté maison, parfumé aux épices et légumes croquants, servi avec poulet.",
-    image: "/images/riz-saute-poulet.jpg",
-    price: "5 000 XAF",
+    name: "Plantain Tapé Porc Roti",
+    description: "Rôti de porc fondant, accompagné de plantain tapé maison.",
+    image: "/images/porc-roti-plantain.jpg",
+    price: "3 500 XAF",
   },
   {
     name: "Ndolè Porc Fumé",
@@ -64,12 +64,6 @@ export const gallery = [
   { src: "/images/interior.jpg", alt: "Salle du restaurant Le Fouquet" },
   { src: "/images/interior-people-1.jpg", alt: "Convives attablés chez Le Fouquet" },
   { src: "/images/interior-people-2.jpg", alt: "Ambiance chaleureuse du restaurant" },
-  { src: "/images/steak-poivre-penja.jpg", alt: "Steak au poivre de Penja" },
-  { src: "/images/avocat-crevette.jpg", alt: "Avocat crevettes" },
-  { src: "/images/bol-piment.jpg", alt: "Bol de piment maison" },
-  { src: "/images/salade-fouquet.jpg", alt: "Salade du Fouquet" },
-  { src: "/images/porc-roti-plantain.jpg", alt: "Rôti de porc et plantains" },
-  { src: "/images/frites-sauce-crevette.png", alt: "Frites sauce crevette" },
   { src: "/images/bar-a-vin.jpg", alt: "Le bar à vins du Fouquet" },
   { src: "/images/cocktails-ambiance.jpg", alt: "Cocktails signature du Fouquet" },
 ];
